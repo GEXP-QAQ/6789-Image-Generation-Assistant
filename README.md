@@ -4,6 +4,35 @@
 
 A fast and flexible image-generation skill featuring a **visual parameter panel**, **configurable generation settings**, and **high-concurrency processing**.
 
+## 📦 Download & Install
+
+[![Download Skill](https://img.shields.io/badge/Download-v1.0.0-2ea44f?style=for-the-badge&logo=github)](https://github.com/GEXP-QAQ/6789-Image-Generation-Assistant/raw/refs/heads/main/relay-image-generator-v1.0.0.zip)
+[![View Repository](https://img.shields.io/badge/View-Repository-181717?style=for-the-badge&logo=github)](https://github.com/GEXP-QAQ/6789-Image-Generation-Assistant)
+
+### ⚡ Quick Install for macOS / Linux
+
+Run the following command in Terminal:
+
+```bash
+tmp=$(mktemp) && curl -fL "https://github.com/GEXP-QAQ/6789-Image-Generation-Assistant/raw/refs/heads/main/relay-image-generator-v1.0.0.zip" -o "$tmp" && mkdir -p "$HOME/.codex/skills" && rm -rf "$HOME/.codex/skills/relay-image-generator" && unzip -q "$tmp" -d "$HOME/.codex/skills" && rm -f "$tmp"
+```
+
+After installation, **restart Codex** and invoke:
+
+```text
+$relay-image-generator
+```
+
+<details>
+<summary><strong>🖱️ Manual Installation</strong></summary>
+
+1. Click **Download Skill** above.
+2. Extract the downloaded ZIP file.
+3. Move the `relay-image-generator` folder into `~/.codex/skills/`.
+4. Restart Codex.
+
+</details>
+
 ## 🚀 Quick Start
 
 Invoke the skill directly in Codex:
@@ -43,7 +72,3 @@ Concurrent processing significantly reduces waiting time when generating multipl
 - 👀 **Inline image previews**
 - ⏱️ **Reduced generation waiting time**
 - 🪙 **Optimized token usage**
-
-## 📦 Download
-
-Download the latest skill package from this repository and install it in your Codex skills directory.
