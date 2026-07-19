@@ -9,12 +9,26 @@ A fast and flexible image-generation skill featuring a **visual parameter panel*
 [![Download Skill](https://img.shields.io/badge/Download-v1.0.0-2ea44f?style=for-the-badge&logo=github)](https://github.com/GEXP-QAQ/6789-Image-Generation-Assistant/raw/refs/heads/main/relay-image-generator-v1.0.0.zip)
 [![View Repository](https://img.shields.io/badge/View-Repository-181717?style=for-the-badge&logo=github)](https://github.com/GEXP-QAQ/6789-Image-Generation-Assistant)
 
-### ⚡ Quick Install for macOS / Linux
+### 🍎 Quick Install for macOS / Linux
 
 Run the following command in Terminal:
 
 ```bash
 tmp=$(mktemp) && curl -fL "https://github.com/GEXP-QAQ/6789-Image-Generation-Assistant/raw/refs/heads/main/relay-image-generator-v1.0.0.zip" -o "$tmp" && mkdir -p "$HOME/.codex/skills" && rm -rf "$HOME/.codex/skills/relay-image-generator" && unzip -q "$tmp" -d "$HOME/.codex/skills" && rm -f "$tmp"
+```
+
+### 🪟 Quick Install for Windows
+
+Run the following commands in PowerShell:
+
+```powershell
+$zip = Join-Path $env:TEMP "relay-image-generator-v1.0.0.zip"
+$dest = Join-Path $env:USERPROFILE ".codex\skills"
+Invoke-WebRequest -Uri "https://github.com/GEXP-QAQ/6789-Image-Generation-Assistant/raw/refs/heads/main/relay-image-generator-v1.0.0.zip" -OutFile $zip
+New-Item -ItemType Directory -Force -Path $dest | Out-Null
+Remove-Item -Recurse -Force (Join-Path $dest "relay-image-generator") -ErrorAction SilentlyContinue
+Expand-Archive -Path $zip -DestinationPath $dest -Force
+Remove-Item $zip -Force
 ```
 
 After installation, **restart Codex** and invoke:
@@ -28,7 +42,9 @@ $relay-image-generator
 
 1. Click **Download Skill** above.
 2. Extract the downloaded ZIP file.
-3. Move the `relay-image-generator` folder into `~/.codex/skills/`.
+3. Move the `relay-image-generator` folder into:
+   - **macOS / Linux:** `~/.codex/skills/`
+   - **Windows:** `%USERPROFILE%\.codex\skills\`
 4. Restart Codex.
 
 </details>
